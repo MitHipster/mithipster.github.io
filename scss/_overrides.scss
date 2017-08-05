@@ -1,0 +1,420 @@
+//  Foundation Overrides
+//  --------------------
+//
+//  Table of Contents:
+//
+//   0. Mixins
+//   1. Base Elements
+//   2. Navigation
+//   3. Callout
+//   4. Accordion
+//   5. Progress Bar
+//   6. Projects
+//   7. Devices
+//   8. Connect
+//   9. Form
+//  10. Contact Info
+
+// 0. Mixins
+// -------------
+
+@mixin font-sizes() {
+  font-size: rem-calc(15);
+  @include breakpoint(medium up) {
+    font-size: rem-calc(17);
+  }
+  @include breakpoint(large up) {
+    font-size: rem-calc(18);
+  }
+}
+
+@mixin padding-row($br-one: 480px up, $br-two: 1024px up) {
+  padding: 2rem 1rem;
+  @include breakpoint($br-one) {
+    padding: 2rem;
+  }
+  @include breakpoint($br-two) {
+    padding: 3rem;
+  }
+}
+
+@mixin button-hollow($bk-color: $dark-portfolio) {
+  font-weight: 600;
+  color: $light-gray;
+  border: 2px solid rgba($light-gray, 0.4);
+  margin-right: 10px;
+  transition: background-color 0.4s ease-out;
+  &:hover,
+  &:focus {
+    opacity: $text-opacity-hover;
+    color: $light-gray;
+    border: 2px solid rgba($light-gray, 0.4);
+  }
+  &:hover {
+    background-color: $bk-color;
+  }
+}
+
+// 1. Base Elements
+// -------------
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  letter-spacing: 0.02rem;
+  color: $light-gray;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  height: 100px;
+  background-color: $dark-connect;
+  @include padding-row();
+  @include breakpoint(xlarge up) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  small {
+    line-height: 36px;
+    opacity: 0.4;
+  }
+}
+
+a {
+  opacity: $text-opacity;
+  &:hover,
+  &:focus {
+    opacity: $text-opacity-hover;
+  }
+}
+
+h4 {
+  font-weight: 700;
+  margin: 1rem 0;
+  i {
+    margin-right: 5px;
+  }
+}
+
+// 2. Navigation
+// -------------
+
+.sticky {
+  width: 100%;
+}
+
+.menu > li > a {
+  text-transform: uppercase;
+  font-size: rem-calc(12);
+  font-weight: 700;
+  padding: 0.8125rem 0;
+  border-bottom: 3px solid $dark-blue;
+  transition: all 0.5s ease-out;
+  &.active {
+    opacity: 1;
+    border-bottom: 3px solid $medium-accent;
+    transition: all 0.5s ease-out;
+  }
+  & span::first-letter {
+    font-size: rem-calc(15);
+  }
+  @include breakpoint(360px up) {
+    font-size: rem-calc(13);
+    padding: 1rem 0;
+    & span::first-letter {
+      font-size: rem-calc(16.25);
+    }
+  }
+}
+
+.menu > li:nth-child(2) a {
+  margin: 0 1.125rem;
+  @include breakpoint(360px up) {
+    margin: 0 1.625rem;
+  }
+  @include breakpoint(medium up) {
+    margin: 0 2rem;
+  }
+}
+
+.menu [class^="fi"]:before {
+  font-size: rem-calc(14);
+  @include breakpoint(360px up) {
+    font-size: rem-calc(16.25);
+  }
+}
+
+// 3. Callout
+// -------------
+
+.callout.large {
+  width: 100%;
+  height: $callout-height;
+  background: url("../img/panel.svg"), linear-gradient(150deg, rgba($medium-blue, 1) 30%, rgba($dark-blue, 1) 80%);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0;
+  padding: 0;
+  @include breakpoint(medium up) {
+    height: $callout-height * 1.5;
+  }
+  > .row {
+    padding: 1.5rem 1rem;
+    @include breakpoint(480px up) {
+      padding: 2rem;
+    }
+    @include breakpoint(medium up) {
+      padding: 6rem 2rem 0;
+    }
+    @include breakpoint(xlarge up) {
+      padding: 6rem 3rem 0;
+    }
+  }
+  #name, #title {
+    font-weight: 700;
+  }
+  #name {
+    line-height: 1.2;
+    span {
+    color: $dark-blue;
+      &.backslash {
+        color: $medium-accent;
+      }
+    }
+  }
+  #title {
+    opacity: $text-opacity;
+  }
+}
+
+// 4. Accordion
+// -------------
+
+.accordion {
+  max-width: 800px;
+}
+
+.accordion-title {
+  font-weight: 600;
+  @include breakpoint(medium up) {
+    font-size: rem-calc(18);
+  }
+  @include breakpoint(medium up) {
+    font-size: rem-calc(20);
+  }
+  span {
+    margin-left: 0.25rem;
+  }
+}
+
+.accordion-content {
+  p {
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    @include font-sizes();
+    @include breakpoint(medium up) {
+      margin-left: 3px;
+    }
+    span {
+      opacity: $text-opacity;
+    }
+  }
+}
+
+.accordion-item:last-child {
+  .accordion-content {
+    margin-top: 5px;
+  }
+}
+
+.skills-key {
+  p {
+    font-size: rem-calc(12);
+    font-weight: 700;
+    @include breakpoint(medium up) {
+      font-size: rem-calc(13);
+    }
+  }
+  .line {
+    height: 10px;
+    border-bottom: 2px solid $medium-gray;
+  }
+}
+
+// 5. Progress Bar
+// ----------------
+
+.progress {
+  margin-bottom: 0.875rem;
+  @include breakpoint(medium up) {
+    line-height: 1.3125rem;
+    height: 1.3125rem;
+    margin-bottom: 1rem;
+  }
+  @include breakpoint(large up) {
+    line-height: 1.4375rem;
+    height: 1.4375rem;
+  }
+  .progress-meter-text {
+    top: -2px;
+    left: 0;
+    transform: translate(0, 0);
+    margin-left: 2px;
+    @include breakpoint(medium up) {
+      top: 0;
+    }
+  }
+  span {
+    @include font-sizes();
+  }
+}
+
+// 6. Projects
+// ----------------
+
+#portfolio {
+  background-color: $medium-portfolio;
+}
+  
+.projects {
+  min-height: 400px;
+  border-bottom: 2px solid rgba($medium-gray, 0.2);
+  @include padding-row();
+  &:last-child {
+    border-bottom: none;
+  }
+  p {
+    opacity: $text-opacity;
+    font-weight: 500;
+    @include font-sizes();
+  }
+  small {
+    display: block;
+    line-height: 1;
+    opacity: $text-opacity;
+    margin-bottom: 1rem;
+  }
+  a.button {
+    &.hollow {
+      @include button-hollow($bk-color: $dark-portfolio);
+    }
+    &.disabled {
+      background-color: rgba($light-gray, 0.2);
+      &:hover {
+        background-color: rgba($light-gray, 0.2);
+      }
+    }
+  }
+}
+
+// 7. Devices
+// ----------------
+
+[class^="device-container"] {
+  margin: 0 auto;
+}
+
+.device-container- {
+  &desktop,
+  &laptop {
+    max-width: 400px;
+  }
+  &phone-port {
+    max-width: 160px;
+  }
+  &tablet-port {
+    max-width: 230px;
+  }
+}
+
+// 8. Connect
+// ----------------
+
+#connect {
+  background-color: $medium-connect;
+  @include padding-row();
+  h4 {
+    @include breakpoint(small only) {
+      margin-top: 0.5rem;
+    }
+  }
+  p {
+    @include font-sizes();
+    font-weight: 500;
+    opacity: $text-opacity-connect;
+  }
+}
+
+// 9. Form
+// ----------------
+
+.contact-message {
+  border-bottom: 2px solid rgba($medium-gray, 0.2);
+  @include breakpoint(xlarge up) {
+    border-bottom: none;
+    padding-right: 2rem;
+  }
+  label {
+    @include font-sizes();
+    [type='text'],
+    [type='email'],
+    textarea {
+      @include font-sizes();
+      resize: none;
+    }
+  }
+  .button.hollow {
+    @include button-hollow($bk-color: $dark-connect);
+    opacity: $text-opacity-connect;
+          margin-top: 1rem;
+    margin-bottom: 2.25rem;
+    @include breakpoint(xlarge up) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// 10. Contact Info
+// ----------------
+
+#connect .contact-info {
+  @include breakpoint(xlarge up) {
+  border-left: 2px solid rgba($medium-gray, 0.2);
+  padding-left: 2rem;
+  }
+  div {
+    margin-top: 1.25rem;
+  }
+  div:first-child {
+    margin-top: 2rem;
+    @include breakpoint(xlarge up) {
+      margin-top: 0;
+    }
+  }
+  p {
+    font-weight: 700;
+    opacity: 1;
+    margin-bottom: 0;
+  }
+  span,
+  address {
+    @include font-sizes();
+    font-weight: 600;
+    font-style: normal;
+    opacity: $text-opacity-connect;
+  }
+  a {
+    display: inline-block;
+    width: 2.25rem;
+    height: 2.25rem;
+    transition: opacity 0.4s ease-out;
+    margin-left: -4px;
+    margin-right: 5px;
+  }
+}
