@@ -18,9 +18,9 @@ const skillsColumnOne = {
     },
     {
       text: "JavaScript",
-      ariaValueNow: "2",
-      ariaValueText: "2 out of 4",
-      barWidth: "width: 50%"
+      ariaValueNow: "3",
+      ariaValueText: "3 out of 4",
+      barWidth: "width: 75%"
     },
     {
       text: "jQuery/AJAX",
@@ -34,28 +34,28 @@ const skillsColumnOne = {
 const skillsColumnTwo = {
   skills: [
     {
-      text: "Foundation",
-      ariaValueNow: "3",
-      ariaValueText: "3 out of 4",
-      barWidth: "width: 75%"
-    },
-    {
       text: "Bootstrap",
-      ariaValueNow: "2",
-      ariaValueText: "2 out of 4",
-      barWidth: "width: 50%"
-    },
-    {
-      text: "Node.js",
-      ariaValueNow: "2",
-      ariaValueText: "2 out of 4",
-      barWidth: "width: 50%"
-    },
-    {
-      text: "MongoDB/SQL",
       ariaValueNow: "3",
       ariaValueText: "3 out of 4",
       barWidth: "width: 75%"
+    },
+    {
+			text: "MongoDB/SQL",
+      ariaValueNow: "3",
+      ariaValueText: "3 out of 4",
+			barWidth: "width: 75%"
+		},
+		{
+			text: "Node.js",
+			ariaValueNow: "2",
+			ariaValueText: "2 out of 4",
+			barWidth: "width: 50%"
+		},
+    {
+      text: "React",
+      ariaValueNow: "2",
+      ariaValueText: "2 out of 4",
+      barWidth: "width: 50%"
     }
   ]
 };
