@@ -310,7 +310,12 @@ h4 {
         background-color: rgba($light-gray, 0.2);
       }
     }
-  }
+	}
+	.footnote {
+		a {
+			opacity: initial;
+		}
+	}
 }
 
 // 7. Devices

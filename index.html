@@ -207,9 +207,18 @@
           </div> <!-- End columns -->
           <div class="columns">
             <h4><i class="fi-{{icon}}"></i>{{name}}</h4>
-            <p>{{desc}}</p>
-            <a href="https://mithipster.github.io/{{github}}" class="hollow button" target="_blank">Visit Site</a>
-            <a href="https://github.com/MitHipster/{{github}}" class="hollow button" target="_blank">View Code</a>
+						<p>{{desc}}</p>
+						{{#if footnote}}
+							<p>{{{footnote}}}</p>
+						{{/if}}
+						<a href=
+							{{#if heroku}}
+								{{heroku}}
+							{{else}}
+								"https://mithipster.github.io/{{github}}" 
+							{{/if}}
+							class="hollow button" target="_blank">Visit Site</a>
+						<a href="https://github.com/MitHipster/{{github}}" class="hollow button"   target="_blank">View Code</a>
           </div> <!-- End columns -->
         </div> <!-- End row -->
       {{/each}}

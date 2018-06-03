@@ -41,9 +41,9 @@ const skillsColumnTwo = {
     },
     {
 			text: "MongoDB/SQL",
-      ariaValueNow: "3",
-      ariaValueText: "3 out of 4",
-			barWidth: "width: 75%"
+      ariaValueNow: "2",
+      ariaValueText: "2 out of 4",
+			barWidth: "width: 50%"
 		},
 		{
 			text: "Node.js",
@@ -64,16 +64,18 @@ const skillsColumnTwo = {
 const portfolio = {
   projects: [
     {
-      name: "Web App Dashboard",
-      desc: "An interactive dashboard for a web application using advanced web techniques including JavaScript programming with Chart.js employing SVG graphics. The site involved creating charts and graphics along with user interactivity and usability components.",
-      image: "p9-desktop.png",
-      github: "dashboard",
+      name: "EventHorizon Calendar",
+			desc: "EventHorizon, a React application, is a crowd-sourced, community calendar that lets members search for, vote on, and post events. Back-end technologies used were MongoDB and Passport.js while state was managed using Redux. On the front-end, reactstrap and Chart.js were also utilized.",
+      image: "unc3-desktop.png",
+			github: "EventHorizon",
+			heroku: "https://event-horizon-ztmc.herokuapp.com/",
       order: "na",
-      icon: "graph-pie",
+      icon: "calendar",
       container: "desktop",
       device: "imac",
       orientation: "portrait",
-      color: "black"
+			color: "black",
+			footnote: "<p class='footnote'>Special thanks goes to <a href='http://www.zdurham.com/' target='_blank'>Zach Durham</a> for his work on the back end and with Redux.</p>",
     },
     {
       name: "PathFinder Travel App",
@@ -86,20 +88,20 @@ const portfolio = {
       device: "ipad_air_2",
       orientation: "portrait",
       color: "black"
-    },
-    {
-      name: "Spotify API",
-      desc: "JavaScript programming and multiple, nested AJAX requests were used to generate a gallery of album images and information by submitting a search term to Spotify's API. Selecting an album displays additional details, including tracks with 30-second samples, using custom-styled lightbox and media plugins.",
-      image: "p10-laptop.png",
-      github: "spotify",
+		},
+		{
+      name: "Web App Dashboard",
+      desc: "An interactive dashboard for a web application using advanced web techniques including JavaScript programming with Chart.js employing SVG graphics. The site involved creating charts and graphics along with user interactivity and usability components.",
+      image: "p9-desktop.png",
+      github: "dashboard",
       order: "na",
-      icon: "social-spotify",
-      container: "laptop",
-      device: "macbook",
+      icon: "graph-pie",
+      container: "desktop",
+      device: "imac",
       orientation: "portrait",
       color: "black"
-    },
-    {
+		},
+		{
       name: "Online Registration Form",
       desc: "A responsive, mobile-friendly registration form using a variety of form input types and attributes, fully customized using HTML5 validation.",
       image: "p3-mobile.png",
@@ -112,14 +114,14 @@ const portfolio = {
       color: "white"
     },
     {
-      name: "Accessibility Refactor",
-      desc: "Enhanced an existing website, making it accessible to users with disabilites by following W3C's Web Accessibility Initiative (WAI) and using Google's Accessibility Developer Tools.",
-      image: "p8-tablet.png",
-      github: "project_8_accessibility_refactor",
+      name: "Spotify API",
+      desc: "JavaScript programming and multiple, nested AJAX requests were used to generate a gallery of album images and information by submitting a search term to Spotify's API. Selecting an album displays additional details, including tracks with 30-second samples, using custom-styled lightbox and media plugins.",
+      image: "p10-laptop.png",
+      github: "spotify",
       order: "na",
-      icon: "wheelchair",
-      container: "tablet-port",
-      device: "ipad_air_2",
+      icon: "social-spotify",
+      container: "laptop",
+      device: "macbook",
       orientation: "portrait",
       color: "black"
     },
