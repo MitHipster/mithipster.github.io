@@ -1,2 +1,2 @@
-# MitHipster.github.io
+# tjacker.github.io
 Tim Acker's Personal Portfolio
